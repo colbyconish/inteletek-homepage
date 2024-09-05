@@ -1,0 +1,12 @@
+[Unit]
+Description=Inteletek Web Server
+After=network.target
+
+[Service]
+User=web-user
+WorkingDirectory=/www
+ExecStart=/usr/local/bin/web_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

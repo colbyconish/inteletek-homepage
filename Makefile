@@ -44,7 +44,9 @@ run: $(TARGET)
 
 .PHONY: install
 install: $(TARGET)
-	ln -s $(shell pwd)/$(TARGET) /usr/local/bin
+	cp $(TARGET) /usr/local/bin/
+	cp webserver.service /etc/systemd/system/
+	cp www/* /www/
 
 .PHONY: clean
 clean:
