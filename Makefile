@@ -44,7 +44,7 @@ run: $(TARGET)
 	$(TARGET)
 
 .PHONY: link
-install: $(TARGET)
+link: $(TARGET)
 	ln -fs $(DIR)/www /www
 	ln -fs $(DIR)/webserver.json /etc/webserver.json
 	ln -fs $(DIR)/$(TARGET) /usr/local/bin/$(EXE)
