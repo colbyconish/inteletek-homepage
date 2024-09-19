@@ -1,8 +1,29 @@
+#include <iostream>
+#include <unistd.h>
+
 #include <drogon/HttpAppFramework.h>
 
+char DEFAULT_CONF_LOC[] = "/etc/webserver.json";
 int main(int argc, char *argv[]) 
 {
-    drogon::app().loadConfigFile("/etc/webserver.json");
+    char *conf_file = DEFAULT_CONF_LOC; 
+
+    int c;
+    while((c = getopt(argc, argv, "c:")) != -1)
+    {
+        switch(c)
+        {
+        case 'c':
+            conf_file = optarg;
+            break;
+        case '?':
+        case '*':
+            std::cout << "Incorrect usage." << std::endl; 
+            break;
+        }
+    }
+
+    drogon::app().loadConfigFile(conf_file);
     drogon::app().run();
     return 0;
 }
