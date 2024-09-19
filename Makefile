@@ -43,11 +43,20 @@ $(OBJS): $(BUILD_DIR)/%.o: %.cpp
 run: $(TARGET)
 	$(TARGET)
 
-.PHONY: install
+.PHONY: link
 install: $(TARGET)
 	ln -fs $(DIR)/www /www
 	ln -fs $(DIR)/webserver.json /etc/webserver.json
 	ln -fs $(DIR)/$(TARGET) /usr/local/bin/$(EXE)
+	cp webserver.service /etc/systemd/system/webserver.service
+	systemctl enable webserver
+	systemctl start webserver
+
+.PHONY: install
+install: $(TARGET)
+	cp $(DIR)/www/* /www/
+	cp $(DIR)/webserver.json /etc/webserver.json
+	cp $(DIR)/$(TARGET) /usr/local/bin/$(EXE)
 	cp webserver.service /etc/systemd/system/webserver.service
 	systemctl enable webserver
 	systemctl start webserver
