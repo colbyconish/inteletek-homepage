@@ -3,7 +3,7 @@ Description=Inteletek Web Server
 After=network.target
 
 [Service]
-User=web-user
+User=root
 WorkingDirectory=/www
 ExecStart=/usr/local/bin/web_server
 Restart=always
