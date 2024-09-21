@@ -1,7 +1,9 @@
 #include <iostream>
 #include <unistd.h>
 
-#include <drogon/HttpAppFramework.h>
+#include <drogon/drogon.h>
+
+using namespace drogon;
 
 char DEFAULT_CONF_LOC[] = "/etc/webserver.json";
 int main(int argc, char *argv[]) 
@@ -23,7 +25,9 @@ int main(int argc, char *argv[])
         }
     }
 
-    drogon::app().loadConfigFile(conf_file);
-    drogon::app().run();
+    auto page404 = HttpResponse::newFileResponse("/www/404.html");
+    app().loadConfigFile(conf_file);
+    app().setCustom404Page(page404);
+    app().run();
     return 0;
 }
