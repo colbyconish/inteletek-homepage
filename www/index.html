@@ -3,23 +3,44 @@
     <head>
         <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css" >
+
+        <!-- bootstrap --!>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <!-- highlight.js --!>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+        <link href="styles.css" rel="stylesheet">
+        <script src="themes.js"></script>
         <title>Inteletek</title>
     </head>
     <body>
-        <main class="container">
-            <header>
-                <nav>
-                    <ul><li><a href="/" class="contrast">Inteletek</a></li></ul>
-                    <ul> 
-                        <li>Home</li> 
-                        <li>About</li> 
-                        <li>Contact</li> 
-                    </ul>
-                </nav>
-            </header>
-
-            <h1>Hello world!</h1>
+        <main>
+            <!--"C:\Users\Colby\Videos\Captures\3 tap deagle.mp4"--!>
+            <!--<video autoplay loop muted src="" class="main-video"></video>--!>
+            <div class="full-size d-flex justify-content-center flex-column">
+                <h1 class="text-center title">Intelligent::Technology</h1>
+                <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
+                <h1 class="text-center slogan">Be Apart Of The Future</h1>
+            </div>
+            <div class="position-absolute start-50 translate-middle code-frame">
+                <pre><code class="bg-transparent text-center code"> void create_greatness(); </code></pre>
+            </div>
         </main>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Products</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2024 Inteletek, LLC</p>
+        </footer>
+
+        <script> 
+            SetColorTheme(GetColorTheme()) 
+            hljs.highlightAll(); 
+        </script>
     </body>
 </html>
