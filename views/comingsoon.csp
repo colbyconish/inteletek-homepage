@@ -17,19 +17,19 @@
         <title>Inteletek</title>
     </head>
     <body>
-        <main>
+        <main class="container-fluid">
             <!--"C:\Users\Colby\Videos\Captures\3 tap deagle.mp4"--!>
             <!--<video autoplay loop muted src="" class="main-video"></video>--!>
             <div class="full-size d-flex justify-content-center flex-column">
                 <h1 class="text-center title">Coming Soon</h1>
             </div>
-	    <div class="position-absolute start-50 translate-middle code-frame">
+            <div class="position-absolute start-50 translate-middle code-frame">
                 <pre><code class="bg-transparent text-center code">auto page = new HTMLPage(Pages::[[ title ]]);</code></pre>
             </div>
-	</main>
-	<%view mainfooter %>
-	<script>
-            hljs.highlightAll();
+        </main>
+        <%view mainfooter %>
+        <script>
+                hljs.highlightAll();
         </script>
     </body>
 </html>

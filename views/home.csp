@@ -17,7 +17,7 @@
         <title>Inteletek</title>
     </head>
     <body>
-        <main>
+        <main class="container-fluid">
             <!--"C:\Users\Colby\Videos\Captures\3 tap deagle.mp4"--!>
             <!--<video autoplay loop muted src="" class="main-video"></video>--!>
             <div class="full-size d-flex justify-content-center flex-column">
@@ -29,7 +29,7 @@
                 <pre><code class="bg-transparent text-center code"> void create_greatness(); </code></pre>
             </div>
         </main>
-	<%view mainfooter %>
+        <%view mainfooter %>
         <script> 
             hljs.highlightAll(); 
         </script>

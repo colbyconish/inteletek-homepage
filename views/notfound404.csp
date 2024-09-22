@@ -17,7 +17,7 @@
         <title>Inteletek</title>
     </head>
     <body>
-        <main>
+        <main class="container-fluid">
             <!--"C:\Users\Colby\Videos\Captures\3 tap deagle.mp4"--!>
             <!--<video autoplay loop muted src="" class="main-video"></video>--!>
             <div class="full-size d-flex justify-content-center flex-column">
@@ -27,6 +27,6 @@
                 <p class="bg-transparent text-center">program exited with code: 404</p>
             </div>
         </main>
-	<%view mainfooter %>
+        <%view mainfooter %>
     </body>
 </html>
