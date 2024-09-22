@@ -12,6 +12,11 @@
             "https": true,
 	    "cert": "/etc/letsencrypt/live/inteletek.io/fullchain.pem",
             "key": "/etc/letsencrypt/live/inteletek.io/privkey.pem"
+        },
+        {
+            "address": "0.0.0.0",
+            "port": 80,
+            "https": false
         }
     ],
     "app": {
