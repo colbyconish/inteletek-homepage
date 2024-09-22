@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+main {
+    margin: 0;
+    height: 85%;
+}
+
+.full-size {
+    width: 100%;
+    height: 100%;
+}
+
+.main-video {
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 4em;
+    font-family: 'Courier New', monospace;
+}
+
+.slogan {
+    font-size: 8em;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.code-frame {
+    font-size: 3em;
+    top: 70%;
+}
