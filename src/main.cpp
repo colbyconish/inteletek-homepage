@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    auto page404 = HttpResponse::newFileResponse("/www/404.html");
+    HttpViewData data;
+    auto page404 = HttpResponse::newHttpViewResponse("notfound404.csp", data);
     app().loadConfigFile(conf_file);
     app().setCustom404Page(page404);
     app().run();

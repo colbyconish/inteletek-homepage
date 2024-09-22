@@ -3,11 +3,9 @@ EXE ?= web_server
 SRC_DIR ?= src
 BUILD_DIR ?= build
 LIB_DIR ?= lib
-INC_DIR ?= include /usr/include/jsoncpp
-TEST_DIR ?= tests
-TEST_PRE ?= test_
+INC_DIR ?= include $(BUILD_DIR)/views /usr/include/jsoncpp
+VIEW_DIR ?= views
 DIR = $(shell pwd)
-
 
 # C++ configuration
 PRODFLAG=-D_PROD
@@ -24,20 +22,22 @@ override LDFLAGS += -lssl -lcrypto -lossp-uuid -pthread -ldrogon -ltrantor -ljso
 # Static Configuration
 override SRCS := $(shell dir $(SRC_DIR)/*.cpp)
 override OBJS := $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SRCS))
-override TEST_SRCS := $(shell dir $(TEST_DIR)/*.test 2>/dev/null)
-override TEST_OBJS := $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SRCS))
-override MAIN_TEST_OBJS := $(patsubst $(BUILD_DIR)/%.o,$(BUILD_DIR)/$(TEST_PRE)%.o,$(OBJS))
+override VIEWS := $(shell dir $(VIEW_DIR)/*.csp)
+override VIEW_OBJS := $(patsubst %.csp,$(BUILD_DIR)/%.cc,$(VIEWS))
 override TARGET := $(BUILD_DIR)/$(EXE)
-override TEST_TARGET := $(BUILD_DIR)/$(TEST_PRE)$(EXE)
 override DEPS := $(OBJS:.o=.d)
 
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJS) $(VIEW_OBJS)
 	@mkdir -p $(@D)
 	$(CXX) -o $@ $^ $(LDLIBS) $(LDFLAGS) 
 
 $(OBJS): $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(PRODFLAG) $(CPPFLAGS) -c $< -o $@
+
+$(VIEW_OBJS): $(BUILD_DIR)/%.cc: %.csp
+	@mkdir -p $(@D)
+	dg_ctl create view $< -o $(@D)
 
 .PHONY: serve
 run: $(TARGET)
