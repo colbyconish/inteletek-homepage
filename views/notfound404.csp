@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-        <link href="styles.css" rel="stylesheet">
-        <script src="themes.js"></script>
+        <link href="/styles.css" rel="stylesheet">
+        <script src="/themes.js"></script>
         <title>Inteletek</title>
     </head>
     <body>
