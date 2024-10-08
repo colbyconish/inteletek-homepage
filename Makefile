@@ -29,7 +29,7 @@ override DEPS := $(OBJS:.o=.d)
 
 $(TARGET): $(OBJS) $(VIEW_OBJS)
 	@mkdir -p $(@D)
-	$(CXX) -o $@ $^ $(LDLIBS) $(LDFLAGS) 
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS) $(LDFLAGS) 
 
 $(OBJS): $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(@D)

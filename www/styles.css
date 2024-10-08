@@ -5,7 +5,6 @@ html, body {
 
 main {
     margin: 0;
-    height: 85%;
 }
 
 .full-size {
@@ -33,7 +32,20 @@ main {
     font-family: 'Brush Script MT', cursive;
 }
 
-.code-frame {
+.code {
     font-size: 3em;
     top: 70%;
+}
+
+.main-footer {
+    width: 100%;
+    padding: 0px 5em;
+}
+
+.flex-grow-even {
+    flex-grow: 1;
+}
+
+.bg-main {
+    background-color: #db4d0f;
 }
