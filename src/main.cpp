@@ -3,6 +3,8 @@
 
 #include <drogon/drogon.h>
 
+#include "Pages.hpp"
+
 using namespace drogon;
 
 char DEFAULT_CONF_LOC[] = "/etc/webserver.json";
@@ -26,6 +28,7 @@ int main(int argc, char *argv[])
     }
 
     HttpViewData data;
+    data.insert("page", Pages::NotFound);
     auto page404 = HttpResponse::newHttpViewResponse("notfound404.csp", data);
     app().loadConfigFile(conf_file);
     app().setCustom404Page(page404);

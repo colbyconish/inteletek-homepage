@@ -1,4 +1,5 @@
 var auto_theme = true;
+
 const Themes = Object.freeze({
     Dark:   Symbol("DarkTheme"),
     Light:  Symbol("LightTheme"),
@@ -17,11 +18,12 @@ function SetColorTheme(theme)
 {
     if(theme == null) return;
     if(theme == Themes.Dark)
-        document.body.dataset.bsTheme = "dark";
+        document.querySelector('html').dataset.bsTheme = "dark";
     else
-        document.body.dataset.bsTheme = "light";
+        document.querySelector('html').dataset.bsTheme = "light";
 }
 
+SetColorTheme(GetColorTheme());
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const new_theme = event.matches ? Themes.Dark : Themes.Light;
     if(auto_theme) SetColorTheme(new_theme);
@@ -69,6 +71,4 @@ $(document).ready(function() {
     })
 
     hljs.highlightAll();
-    if(auto_theme)
-        SetColorTheme(GetColorTheme());
 });

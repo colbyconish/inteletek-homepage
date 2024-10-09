@@ -4,26 +4,6 @@
 
 using namespace drogon;
 
-enum class Pages 
-{
-    Home,
-    Products,
-    About,
-    Contact
-};
-inline const char *to_string(Pages page)
-{
-    static const char *names[] =
-    {
-        "Home",
-        "Products",
-        "About",
-        "Contact"
-    };
-
-    return names[(int) page];
-}
-
 class MainController : public drogon::HttpController<MainController>
 {
   public:

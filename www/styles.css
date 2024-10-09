@@ -1,10 +1,20 @@
+@font-face { font-family: Mokoto; src: url('/fonts/mokoto.ttf'); }
+@font-face { font-family: Betm; src: url('/fonts/betm.ttf'); }
+
 html, body {
     margin: 0;
     height: 100%;
+    font-family: 'Betm';
+}
+
+body {
+    display: flex;
 }
 
 main {
     margin: 0;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .full-size {
@@ -22,14 +32,8 @@ main {
     object-fit: cover;
 }
 
-.title {
-    font-size: 4em;
-    font-family: 'Courier New', monospace;
-}
-
-.slogan {
-    font-size: 8em;
-    font-family: 'Brush Script MT', cursive;
+.mokoto {
+    font-family: 'Mokoto'; 
 }
 
 .code {
@@ -42,10 +46,37 @@ main {
     padding: 0px 5em;
 }
 
+.main-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
 .flex-grow-even {
     flex-grow: 1;
 }
 
+.flex-shrink-even {
+    flex-shrink: 1;
+}
+
+.flex-both {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
 .bg-main {
     background-color: #db4d0f;
+}
+
+header .nav-link:hover {
+    background-color: var(--bs-secondary-bg);
+}
+
+header .nav-item {
+    width: 100%;
+}
+
+footer .nav-link:hover {
+    text-decoration: underline;
 }

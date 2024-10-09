@@ -1,4 +1,5 @@
 #include "MainController.h"
+#include "Pages.hpp"
 
 void MainController::DefaultRoute(const HttpRequestPtr& req, 
 		std::function<void (const HttpResponsePtr &)> &&callback) const

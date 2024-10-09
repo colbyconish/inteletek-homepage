@@ -1,18 +1,16 @@
-<!doctype html>
+<%inc #include "Pages.hpp" %>
+
+<!DOCTYPE html>
 <html lang="en">
-    <%inc #include "MainController.h" %>
-    <%c++
-        Pages page = @@.get<Pages>("page");
-        const char *title = to_string(page);
-    %>
-    <%view head%>
     <body>
-        <main class="full-size d-flex flex-column">
+        <%view head%>
+        <main class="d-flex flex-grow-even flex-column">
             <%view mainheader%>
             <div class="d-flex flex-grow-even justify-content-center">
                 <div class="d-flex justify-content-center flex-column">
                     <h1 class="text-center title">Coming Soon</h1>
-                    <pre><code class="bg-transparent text-center code"> auto page = new HTMLPage(Pages::{% title %}); </code></pre>
+                    <%c++ Pages page = @@.get<Pages>("page");%>
+                    <pre><code class="bg-transparent text-center code"> auto page = new HTMLPage(Pages::<%c++ $$<<to_string(page);%>); </code></pre>
                 </div>
             </div>
             <%view mainfooter%>

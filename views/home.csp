@@ -1,16 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <%view head%>
     <body>
-        <main class="full-size d-flex flex-column">
+        <%view head%>
+        <main class="d-flex flex-grow-even flex-column">
             <%view mainheader%>
             <div class="d-flex flex-grow-even justify-content-center">
                 <!--<video autoplay loop muted src="/videos/main.mp4" class="main-video"></video>--!>
-                <div class="d-flex justify-content-center flex-column">
-                    <h1 class="text-center title">Intelligent::Technology</h1>
+                <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
+                    <img class="main-image" src="/images/logo.png">
+                    <h1 class="text-center mt-4 fs-1">Intelligent::Technology</h1>
                     <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
-                    <h1 class="text-center slogan">Be Apart Of The Future</h1>
-                    <pre><code class="bg-transparent text-center code"> void create_greatness(); </code></pre>
+                    <h1 class="text-center fs-1 mokoto">Be Apart Of The Future</h1>
+                    <!--<pre><code class="flex-both bg-transparent text-center code"> void create_greatness(); </code></pre>--!>
                 </div>
             </div>
             <%view mainfooter%>
