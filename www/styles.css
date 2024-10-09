@@ -13,7 +13,6 @@ body {
 
 main {
     margin: 0;
-    overflow: hidden;
     max-width: 100%;
 }
 
@@ -69,14 +68,31 @@ main {
     background-color: #db4d0f;
 }
 
-header .nav-link:hover {
-    background-color: var(--bs-secondary-bg);
-}
-
 header .nav-item {
     width: 100%;
 }
 
+header .nav-link:hover {
+    background-color: var(--bs-secondary-bg);
+}
+
 footer .nav-link:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .main-image {
+        display: None;
+    }
+}
+
+@media (max-width: 500px) {
+    footer ul.nav {
+        display: None;
+    }
+
+    footer p {
+        text-align: center;
+        width: 100%;
+    }
 }
