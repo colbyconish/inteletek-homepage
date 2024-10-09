@@ -35,9 +35,12 @@ main {
     font-family: 'Mokoto'; 
 }
 
-.code {
+.title {
     font-size: 3em;
-    top: 70%;
+}
+
+.code {
+    font-size: 2em;
 }
 
 .main-footer {
@@ -47,7 +50,7 @@ main {
 
 .main-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -84,9 +87,13 @@ footer .nav-link:hover {
     .main-image {
         display: None;
     }
+
+    .code {
+        font-size: 1.5em;
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     footer ul.nav {
         display: None;
     }
@@ -94,5 +101,9 @@ footer .nav-link:hover {
     footer p {
         text-align: center;
         width: 100%;
+    }
+    
+    .code {
+        font-size: 1em;
     }
 }

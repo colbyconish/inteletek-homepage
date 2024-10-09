@@ -6,7 +6,7 @@
         <%view head%>
         <main class="d-flex flex-grow-even flex-column">
             <%view mainheader%>
-            <div class="d-flex flex-grow-even justify-content-center">
+            <div class="overflow-hidden d-flex flex-grow-even justify-content-center">
                 <div class="d-flex justify-content-center flex-column">
                     <h1 class="text-center title">Coming Soon</h1>
                     <%c++ Pages page = @@.get<Pages>("page");%>
