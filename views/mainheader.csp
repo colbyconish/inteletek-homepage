@@ -28,51 +28,61 @@
                 <img src="/images/logo.png" width=26 height=26>
                 <span class="fs-2 px-2">Inteletek</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="h-100 collapse navbar-collapse" id="navbar">
-              <ul class="ms-auto d-flex align-items-center fs-4 navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <div id="bd-theme" class="d-flex justify-content-center dropdown bd-mode-toggle">
-                      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-                        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text" style="">
-                        <li>
-                          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-                            Light
-                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+
+
+            <div class="offcanvas offcanvas-end h-100" id="navbar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Inteletek</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+            
+              <div class="offcanvas-body">
+                  <ul class="d-flex align-items-center navbar-nav ms-auto h-100">
+                    <li class="nav-item"><a href="/" class="nav-link <%c++ if(page==Pages::Home) $$<<"active"; %>">Home</a></li>
+                    <li class="nav-item"><a href="/products" class="nav-link <%c++ if(page==Pages::Products) $$<<"active"; %>">Products</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link <%c++ if(page==Pages::Contact) $$<<"active"; %>">Contact</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link <%c++ if(page==Pages::About) $$<<"active"; %>">About</a></li>
+                    <li class="py-lg-1 col-12 col-lg-auto">
+                        <div class="vr d-none d-lg-flex h-100 mx-lg-2"></div>
+                        <hr class="d-lg-none my-2 text-white-50">
+                    </li>
+                    <li class="nav-item mt-auto">
+                        <div id="bd-theme" class="d-flex justify-content-end dropdown bd-mode-toggle">
+                          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
                           </button>
-                        </li>
-                        <li>
-                          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-                            Dark
-                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-                          </button>
-                        </li>
-                        <li>
-                          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-                            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                            Auto
-                            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                </li>
-                <li class="py-lg-1 col-12 col-lg-auto">
-                    <div class="vr d-none d-lg-flex h-100 mx-lg-2"></div>
-                    <hr class="d-lg-none my-2 text-white-50">
-                </li>
-                <li class="nav-item"><a href="/" class="text-center nav-link <%c++ if(page==Pages::Home) $$<<"active"; %>">Home</a></li>
-                <li class="nav-item"><a href="/products" class="text-center nav-link <%c++ if(page==Pages::Products) $$<<"active"; %>">Products</a></li>
-                <li class="nav-item"><a href="/contact" class="text-center nav-link <%c++ if(page==Pages::Contact) $$<<"active"; %>">Contact</a></li>
-                <li class="nav-item"><a href="/about" class="text-center nav-link <%c++ if(page==Pages::About) $$<<"active"; %>">About</a></li>
-              </ul>
+                          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text" style="">
+                            <li>
+                              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                                Light
+                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                                Dark
+                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                              </button>
+                            </li>
+                            <li>
+                              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                                Auto
+                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                    </li>
+                  </ul>
+              </div>
             </div>
           </div>
         </nav>

@@ -7,17 +7,27 @@
             <!--<video autoplay loop muted src="/videos/main.mp4" class="main-video"></video>--!>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
-                <!-- Logo and tag line -->
-                <img class="main-image" src="/images/logo.png">
-                <h1 class="text-center mt-4 fs-1">Intelligent::Technology</h1>
-                <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
-                <h1 class="text-center fs-1 mokoto">Be Apart Of The Future</h1>
+                <!-- Logo and missions -->
+                <div class="main-text-container container">
+                    <img class="main-image" src="/images/logo.png">
+                    <h1 class="mokoto main-text title">Intelligent Technology</h1>
+                    <h2 class="main-text">
+                        This is a really long explination that explains my company. The mission is included in this sentence.
+                    </h2>
+                    <h3 class="main-text">
+                        Have the application you always dreamed of.
+                    </h3>
+                </div>
 
                 <!-- Relocation -->
                 <div class="d-flex button-list container w-100">
                     <a class="nav-link" href="/contact"><span>Contact Us</span></a>
                     <a class="nav-link" href="/products"><span>View Products</span></a>
                 </div>
+
+                <!-- Call to action -->
+                <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
+                <h1 class="text-center fs-1 mokoto">Be Apart Of The Future</h1>
 
                 <!-- Slice 
                 <div class="container slice w-100">

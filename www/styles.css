@@ -85,12 +85,25 @@ header {
     justify-content: center;
     background-color: var(--bs-body-color);
     color: var(--bs-body-bg);
+    transition: width 0.1s ease-in-out;
 }
 
-.button-list a:last-child {
-    background-color: var(--main-color);
-    color: var(--bs-body-color);
+.button-list a:hover {
+    width: 220px;
+    background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+    color: var(--bs-body-bg);
 }
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    display: none !important;
+}
+
+.btn-close:focus {
+    display: none !important;
 }
 
 .button-list a::before {
@@ -107,13 +120,19 @@ header {
     opacity: 0.3;
 }
 
+.button-list a:last-child {
+    background-color: var(--main-color);
+    color: var(--bs-body-color);
+}
+
+.button-list a:last-child::before {
+    background-color: var(--main-color);
+}
+
 .mokoto {
     font-family: 'Mokoto'; 
 }
 
-.title {
-    font-size: 3em;
-}
 
 .code {
     font-size: 2em;
@@ -128,6 +147,26 @@ header {
     width: 100%;
     max-width: 200px;
     height: auto;
+}
+
+.title {
+    margin-top: 30px !important;
+    font-size: 5em !important;
+    opacity: 1 !important;
+}
+
+.main-text-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-text {
+    width: 75%;
+    margin-top: 10px;
+    font-size: 2em;
+    text-align: center;
+    opacity: 0.8;
 }
 
 .flex-grow-even {
@@ -151,7 +190,13 @@ header .nav-item {
     width: 100%;
 }
 
+header .nav-link {
+    padding: 5px 10px;
+    transition: padding 0.1s ease-in-out;
+}
+
 header .nav-link:hover {
+    padding-left: 20px;
     background-color: var(--bs-secondary-bg);
 }
 
@@ -162,6 +207,10 @@ footer .nav-link:hover {
 @media (max-width: 800px) {
     .main-image {
         display: None;
+    }
+
+    .title {
+        width: 100% !important;
     }
 
     .code {
@@ -179,6 +228,10 @@ footer .nav-link:hover {
         width: 100%;
     }
 
+    .title {
+        font-size: 2.5em !important;
+    }
+
     .slice div img {
         display: none;
     }
@@ -193,5 +246,24 @@ footer .nav-link:hover {
 
     .button-list a {
         width: 100%;
+    }
+
+    .button-list a:hover {
+        width: 100%;
+    }
+
+    .main-text-container {
+        align-items: start;
+    }
+
+    .main-text {
+        width: 80%;
+        font-size: 1.2em;
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .offcanvas {
+        width: 100% !important;
     }
 }
