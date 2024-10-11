@@ -2,6 +2,7 @@
 @font-face { font-family: Betm; src: url('/fonts/betm.ttf'); }
 
 html, body {
+    --main-color: #ed3f1c;
     margin: 0;
     height: 100%;
     font-family: 'Betm';
@@ -14,6 +15,10 @@ body {
 main {
     margin: 0;
     max-width: 100%;
+}
+
+header {
+    opacity: 95%;
 }
 
 .full-size {
@@ -29,6 +34,77 @@ main {
     position: absolute;
     z-index: -1;
     object-fit: cover;
+}
+
+.slice {
+    height: 300px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.slice h1 {
+    text-align: center;
+    margin: 0px;
+    width: 100%;
+    height: 15%;
+}
+
+.slice div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    height: 85%;
+}
+
+.slice div * {
+    width: auto;
+    max-height: 85%;
+    max-width: 40%;
+    font-size: 1em;
+}
+
+.button-list {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-list a {
+    width: 200px;
+    height: 65px;
+    margin: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.7em;
+    text-align: center;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bs-body-color);
+    color: var(--bs-body-bg);
+}
+
+.button-list a:last-child {
+    background-color: var(--main-color);
+    color: var(--bs-body-color);
+}
+}
+
+.button-list a::before {
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    filter: blur(1.5em);
+    z-index: -1;
+    background-color: var(--bs-body-color);
+    opacity: 0.3;
 }
 
 .mokoto {
@@ -102,8 +178,20 @@ footer .nav-link:hover {
         text-align: center;
         width: 100%;
     }
+
+    .slice div img {
+        display: none;
+    }
     
     .code {
         font-size: 1em;
+    }
+
+    .button-list {
+        flex-direction: column;
+    }
+
+    .button-list a {
+        width: 100%;
     }
 }
