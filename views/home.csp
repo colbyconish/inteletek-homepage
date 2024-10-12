@@ -9,19 +9,19 @@
                 <!-- Logo and missions -->
                 <div class="main-text-container container">
                     <img class="main-image" src="/images/logo.png">
-                    <h1 class="mokoto main-text title">Intelligent Technology</h1>
+                    <h1 class="mokoto main-text title">Intelligent <span class="highlight">Technology</span></h1>
                     <h2 class="main-text">
-                        This is a really long explination that explains my company. The mission is included in this sentence.
+                        We at <span class="highlight">inteletek</span>, strive to create quality software that is highly efficient and highly available <strong><i>without</i></strong> compromising on security.
                     </h2>
                     <h3 class="main-text">
-                        Have the application you always dreamed of.
+                        Our mission is to bring quality software to the masses. 
                     </h3>
                 </div>
 
                 <!-- Relocation -->
                 <div class="d-flex button-list container w-100">
                     <a class="nav-link" href="/contact"><span>Contact Us</span></a>
-                    <a class="nav-link" href="/products"><span>View Products</span></a>
+                    <a class="nav-link" href="/products"><span>View Services</span></a>
                 </div>
 
                 <!-- Call to action -->

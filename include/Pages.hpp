@@ -4,7 +4,7 @@ enum class Pages
 {
     None,
     Home,
-    Products,
+    Services,
     About,
     Contact,
     NotFound
@@ -15,7 +15,7 @@ inline const char *to_string(Pages page)
     {
         "None",
         "Home",
-        "Products",
+        "Services",
         "About",
         "Contact",
         "404"

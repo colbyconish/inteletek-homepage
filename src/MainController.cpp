@@ -10,11 +10,11 @@ void MainController::DefaultRoute(const HttpRequestPtr& req,
     callback(resp);
 }
 
-void MainController::ProductsRoute(const HttpRequestPtr& req, 
+void MainController::ServicesRoute(const HttpRequestPtr& req, 
 		std::function<void (const HttpResponsePtr &)> &&callback) const
 {	
     HttpViewData data;
-    data.insert("page", Pages::Products);
+    data.insert("page", Pages::Services);
     auto resp=HttpResponse::newHttpViewResponse("comingsoon.csp", data);
     callback(resp);
 }
