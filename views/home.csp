@@ -2,7 +2,7 @@
 <html lang="en">
     <%view head%>
     <body>
-        <main class="d-flex flex-grow-even flex-column">
+        <main>
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 

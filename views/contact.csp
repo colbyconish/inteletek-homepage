@@ -4,14 +4,13 @@
     <body>
         <main>
             <%view mainheader%>
-
-            <div class="mw-100 d-flex justify-content-center align-items-center flex-column h-100">
-                <div id="contact-main">
+            <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
+                <div id="contact-main" class="w-100"> 
                     <div class="main-text-container container">
                         <img class="main-image" src="/images/logo.png">
                         <h1 class="mokoto main-text title">Contact Us</h1>
                         <h3 class="main-text">
-                            Tell us about any inquiries or ideas you might have. 
+                            Please tell us about any inquiries or ideas you might have. 
                         </h3>
                     </div>
 
@@ -39,11 +38,11 @@
                         </form>
 
                         <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
-                        <h1 class="text-center fs-1 mokoto">Let's get in in touch</h1>
+                        <h1 class="text-center fs-1 mokoto">Let's get in touch</h1>
                     </div>
                 </div>
 
-                <div id="contact-thanks" class="hidden">
+                <div id="contact-thanks" class="hidden w-100">
                     <div class="main-text-container container">
                         <img class="main-image" src="/images/logo.png">
                         <h1 class="mokoto main-text title">Thank You</h1>
