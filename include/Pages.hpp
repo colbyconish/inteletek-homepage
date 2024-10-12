@@ -2,6 +2,7 @@
 
 enum class Pages 
 {
+    None,
     Home,
     Products,
     About,
@@ -12,6 +13,7 @@ inline const char *to_string(Pages page)
 {
     static const char *names[] =
     {
+        "None",
         "Home",
         "Products",
         "About",

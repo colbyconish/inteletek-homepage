@@ -17,6 +17,7 @@
 
     <link href="/styles.css" rel="stylesheet">
     <script src="/themes.js" defer></script>
+    <script src="/script.js" defer></script>
 
     <%c++ Pages page = @@.get<Pages>("page");%>
     <title>Inteletek • <%c++ $$<<to_string(page);%></title>

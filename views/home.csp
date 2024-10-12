@@ -4,7 +4,6 @@
     <body>
         <main class="d-flex flex-grow-even flex-column">
             <%view mainheader%>
-            <!--<video autoplay loop muted src="/videos/main.mp4" class="main-video"></video>--!>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
                 <!-- Logo and missions -->

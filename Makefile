@@ -4,6 +4,9 @@ SRC_DIR ?= src
 BUILD_DIR ?= build
 LIB_DIR ?= lib
 INC_DIR ?= include $(BUILD_DIR)/views /usr/include/jsoncpp
+INC_DIR += /usr/local/include/bsoncxx/v_noabi 
+INC_DIR += /usr/local/include//bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc
+INC_DIR += /usr/local/include/mongocxx/v_noabi/
 VIEW_DIR ?= views
 DIR = $(shell pwd)
 
@@ -17,7 +20,7 @@ override CXXFLAGS +=-std=c++17 $(addprefix -I,$(INC_DIR)) $(OPTFLAGS)
 override LIBS := $(shell dir $(LIB_DIR)/* 2>/dev/null)
 
 override LDLIBS +=-L$(LIB_DIR) -L/usr/local/lib64
-override LDFLAGS += -lssl -lcrypto -lossp-uuid -pthread -ldrogon -ltrantor -ljsoncpp -lz -ldl
+override LDFLAGS += -lssl -lmongocxx -lcrypto -lossp-uuid -pthread -ldrogon -ltrantor -ljsoncpp -lz -ldl
 
 # Static Configuration
 override SRCS := $(shell dir $(SRC_DIR)/*.cpp)

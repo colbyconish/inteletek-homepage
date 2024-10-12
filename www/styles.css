@@ -2,7 +2,8 @@
 @font-face { font-family: Betm; src: url('/fonts/betm.ttf'); }
 
 html, body {
-    --main-color: #ed3f1c;
+    --main-color: rgb(237, 63, 28);
+    --main-border: rgba(237, 63, 28, 0.5);
     margin: 0;
     height: 100%;
     font-family: 'Betm';
@@ -13,12 +14,24 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
     margin: 0;
     max-width: 100%;
 }
 
 header {
     opacity: 95%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.highlight {
+    color: var(--main-color);
 }
 
 .full-size {
@@ -204,6 +217,27 @@ footer .nav-link:hover {
     text-decoration: underline;
 }
 
+form {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form button.btn {
+    background-color: var(--main-color);
+}
+
+form button.btn:hover {
+    background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+    background-color: var(--main-color);
+}
+
+.form-control:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 .15rem var(--main-border);
+}
+
 @media (max-width: 800px) {
     .main-image {
         display: None;
@@ -215,6 +249,10 @@ footer .nav-link:hover {
 
     .code {
         font-size: 1.5em;
+    }
+
+    form {
+        width: 100%;
     }
 }
 
