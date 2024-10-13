@@ -5,27 +5,17 @@ void MainController::DefaultRoute(const HttpRequestPtr& req,
 		std::function<void (const HttpResponsePtr &)> &&callback) const
 {	
     HttpViewData data;
-    data.insert("page", Pages::Home);
-    auto resp=HttpResponse::newHttpViewResponse("home.csp", data);
-    callback(resp);
-}
+    std::string path = req->getPath();
+    if(path.size() <= 1) 
+    {
+        data.insert("page", Pages::Home);
+        callback(HttpResponse::newHttpViewResponse("home.csp", data));
+        return;
+    }
 
-void MainController::ServicesRoute(const HttpRequestPtr& req, 
-		std::function<void (const HttpResponsePtr &)> &&callback) const
-{	
-    HttpViewData data;
-    data.insert("page", Pages::Services);
-    auto resp=HttpResponse::newHttpViewResponse("comingsoon.csp", data);
-    callback(resp);
-}
-
-void MainController::AboutRoute(const HttpRequestPtr& req, 
-		std::function<void (const HttpResponsePtr &)> &&callback) const
-{	
-    HttpViewData data;
-    data.insert("page", Pages::About);
-    auto resp=HttpResponse::newHttpViewResponse("comingsoon.csp", data);
-    callback(resp);
+    path.erase(0, 1);
+    data.insert("page", from_string(path.c_str()));
+    callback(HttpResponse::newHttpViewResponse(path + ".csp", data));
 }
 
 void MainController::NewContact(const HttpRequestPtr& req, 
@@ -40,16 +30,7 @@ void MainController::NewContact(const HttpRequestPtr& req,
         << std::endl << message 
         << std::endl;
 
-    auto resp=HttpResponse::newHttpResponse();
+    auto resp = HttpResponse::newHttpResponse();
     resp->setStatusCode(k200OK);
-    callback(resp);
-}
-
-void MainController::ContactRoute(const HttpRequestPtr& req, 
-		std::function<void (const HttpResponsePtr &)> &&callback) const
-{	
-    HttpViewData data;
-    data.insert("page", Pages::Contact);
-    auto resp=HttpResponse::newHttpViewResponse("contact.csp", data);
     callback(resp);
 }

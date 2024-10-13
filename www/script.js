@@ -1,5 +1,6 @@
 async function send_form_data(form) {
     var form_data = new FormData(form);
+    form.querySelector("button").disabled = true;
 
     try 
     {
@@ -7,8 +8,9 @@ async function send_form_data(form) {
         var email = form_data.get("email");;
         var message = form_data.get("message");;
         var url = `/contact/submit?fullname=${fullname}&email=${email}&message=${message}`;
-        const response = await fetch(url, {method: "POST"});
 
+
+        const response = await fetch(url, {method: "POST"});
         if (response.ok)
         {
             document.querySelector("#contact-main").classList.add("hidden");
@@ -21,6 +23,8 @@ async function send_form_data(form) {
     {
         console.error(e);
     }
+
+    form.querySelector("button").disabled = false;
 }
 
 // Setup forms

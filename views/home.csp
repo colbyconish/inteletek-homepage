@@ -21,21 +21,12 @@
                 <!-- Relocation -->
                 <div class="d-flex button-list container w-100">
                     <a class="nav-link" href="/contact"><span>Contact Us</span></a>
-                    <a class="nav-link" href="/products"><span>View Services</span></a>
+                    <a class="nav-link" href="/services"><span>View Services</span></a>
                 </div>
 
                 <!-- Call to action -->
                 <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
                 <h1 class="text-center fs-1 mokoto">Be Apart Of The Future</h1>
-
-                <!-- Slice 
-                <div class="container slice w-100">
-                    <h1>Mission</h1>
-                    <div>
-                        <img src="/images/logo.png"></img>
-                        <p>This is the mission placeholder.</p>
-                    </div>
-                </div>-->
             </div>
             <%view mainfooter%>
         </main>

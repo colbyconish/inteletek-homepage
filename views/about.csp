@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%view head%>
+    <body>
+        <main>
+            <%view mainheader%>
+            <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
+
+
+                <!-- Call to action -->
+                <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
+                <h1 class="text-center fs-1 mokoto">Get to know us</h1>
+            </div>
+            <%view mainfooter%>
+        </main>
+    </body>
+</html>
