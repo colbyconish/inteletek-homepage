@@ -159,10 +159,10 @@ header {
     width: 100%;
     max-width: 200px;
     height: auto;
+    margin-bottom: 10px;
 }
 
 .title {
-    margin-top: 30px !important;
     font-size: 5em !important;
     opacity: 1 !important;
 }
