@@ -52,6 +52,9 @@
                         <h3 class="main-text">
                             You will receice an email at <span class="highlight" id="contact-email"></span> when we get to your message.
                         </h3>
+                        <h3 class="main-text">
+                            Return <a href="/" class="highlight">home</a>.
+                        </h3>
                     </div>
                 </div>
             </div>

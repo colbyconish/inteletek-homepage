@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <%view head%>
@@ -7,6 +6,48 @@
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
+                <!-- Web Development -->
+                <div class="main-text-container container">
+                    <h1 class="mokoto main-text title">Web Development</span></h1>
+                    <h2 class="main-text">
+                        We excel in web development and can build you any size web application in your prefered framework.    
+                    </h2>
+                    <h3 class="main-text">
+                        Tell us what your web needs are and how you'd like it built, and that's what we'll do. 
+                    </h3>
+                </div>
+
+                <!-- Standalone Software -->
+                <div class="mt-5 main-text-container container">
+                    <h1 class="mokoto main-text title">App Development</span></h1>
+                    <h2 class="main-text">
+                        Need a GUI to interact with your web API, or a CLI to expedite data processing? We would be ecstatic to create either for you.
+                    </h2>
+                    <h3 class="main-text">
+                        Tell us what your workflow is missing and we'll fill the gaps.
+                    </h3>
+                </div>
+
+                <!-- Software Support -->
+                <div class="mt-5 main-text-container container">
+                    <h1 class="mokoto main-text title">Development Support</span></h1>
+                    <h2 class="main-text">
+                        Already have a software project? Need some help moving it to the next level? Need help with CI/CD? We can help with it all.
+                    </h2>
+                    <h3 class="main-text">
+                        Our experts are raring and ready to support anything you can throw at them.
+                    </h3>
+                </div>
+
+                <!-- Miscellaneous -->
+                <div class="mt-4 main-text-container container">
+                    <h2 class="main-text">
+                        The categories above aren't quite what your looking for?
+                    </h2>
+                    <h3 class="main-text">
+                        Send us a <a href="/contact" class="highlight">message</a> and let us know what you need.
+                    </h3>
+                </div>
 
                 <!-- Call to action -->
                 <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>

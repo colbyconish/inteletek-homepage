@@ -7,6 +7,15 @@
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
+                <!-- Mission -->
+                <div class="main-text-container container">
+                    <img class="main-image" src="/images/logo.png">
+                    <h1 class="mokoto main-text title">Our Mission</span></h1>
+                    <h2 class="main-text">
+                    </h2>
+                    <h3 class="main-text">
+                    </h3>
+                </div>
 
                 <!-- Call to action -->
                 <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
