@@ -12,10 +12,10 @@
                 <!-- Mission -->
                 <div class="main-text-container container">
                     <h1 class="mokoto main-text title">Our Mission</span></h1>
+                    <h2 class="main-text">
+                    Endeavor to bring high quality custom software to everyone, with transparency and integrality.
+                    </h2>
                 </div>
-                <h2 class="main-text">
-                Endeavor to bring high quality custom software to everyone, with transparency and integrality.
-                </h2>
 
                 <!-- Vision -->
                 <div class="main-text-container container">
