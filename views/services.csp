@@ -15,6 +15,14 @@
                     <h3 class="main-text">
                         Tell us what your web needs are and how you'd like it built, and that's what we'll do. 
                     </h3>
+
+                    <div class="image-list full-size">
+                        <image src="images/html.png">
+                        <image src="images/css.png">
+                        <image src="images/js.png">
+                        <image src="images/wa.png">
+                        <image src="images/php.png">
+                    </div>
                 </div>
 
                 <!-- Standalone Software -->
@@ -26,6 +34,14 @@
                     <h3 class="main-text">
                         Tell us what your workflow is missing and we'll fill the gaps.
                     </h3>
+
+                    <div class="image-list full-size">
+                        <image src="images/cpp.png">
+                        <image src="images/python.png">
+                        <image src="images/bash.png">
+                        <image src="images/java.png">
+                        <image src="images/csharp.png">
+                    </div>
                 </div>
 
                 <!-- Software Support -->
@@ -37,15 +53,23 @@
                     <h3 class="main-text">
                         Our experts are raring and ready to support anything you can throw at them.
                     </h3>
+
+                    <div class="image-list full-size">
+                        <image src="images/github.png">
+                        <image src="images/gitlab.png">
+                        <image src="images/aws.png">
+                        <image src="images/docker.png">
+                        <image src="images/kubernetes.png">
+                    </div>
                 </div>
 
                 <!-- Miscellaneous -->
                 <div class="mt-4 main-text-container container">
                     <h2 class="main-text">
-                        The categories above aren't quite what your looking for?
+                        See something you like?<br>Not quite what your looking for?
                     </h2>
                     <h3 class="main-text">
-                        Send us a <a href="/contact" class="highlight">message</a> and let us know what you need.
+                        Send us a <a href="/contact" class="highlight">message</a> and let us know what you need!
                     </h3>
                 </div>
 

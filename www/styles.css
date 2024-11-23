@@ -198,6 +198,18 @@ header {
     background-color: #db4d0f;
 }
 
+.image-list {
+    display: flex;
+    padding: 50px 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-list * {
+    width: 12.5%;
+    height: auto;
+}
+
 header .nav-item {
     width: 100%;
 }
@@ -252,6 +264,10 @@ form button.btn:hover {
 
     form {
         width: 100%;
+    }
+
+    .image-list {
+        padding: 15px 0px;
     }
 }
 

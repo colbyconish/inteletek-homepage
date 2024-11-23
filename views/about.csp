@@ -7,14 +7,20 @@
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
+                <img class="main-image" src="/images/logo.png">
+
                 <!-- Mission -->
                 <div class="main-text-container container">
-                    <img class="main-image" src="/images/logo.png">
                     <h1 class="mokoto main-text title">Our Mission</span></h1>
-                    <h2 class="main-text">
-                    </h2>
-                    <h3 class="main-text">
-                    </h3>
+                </div>
+                <h2 class="main-text">
+                Endeavor to bring high quality custom software to everyone, with transparency and integrality.
+                </h2>
+
+                <!-- Vision -->
+                <div class="main-text-container container">
+                    <h1 class="mokoto main-text title">Our Vision</span></h1>
+                    <h2 class="main-text">A fully automated world.</h2>
                 </div>
 
                 <!-- Call to action -->
