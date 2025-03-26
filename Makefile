@@ -20,7 +20,7 @@ override CXXFLAGS +=-std=c++17 $(addprefix -I,$(INC_DIR)) $(OPTFLAGS)
 override LIBS := $(shell dir $(LIB_DIR)/* 2>/dev/null)
 
 override LDLIBS +=-L$(LIB_DIR) -L/usr/local/lib64
-override LDFLAGS += -lssl -lmongocxx -lcrypto -lossp-uuid -pthread -ldrogon -ltrantor -ljsoncpp -lz -ldl
+override LDFLAGS += -lyaml-cpp -lbrotlienc -lbrotlidec -lcares -lssl -lsqlite3 -lcrypto -luuid -pthread -ldrogon -ltrantor -ljsoncpp -lz -ldl
 
 # Static Configuration
 override SRCS := $(shell dir $(SRC_DIR)/*.cpp)
