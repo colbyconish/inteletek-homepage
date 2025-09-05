@@ -33,5 +33,6 @@ int main(int argc, char *argv[])
     app().loadConfigFile(conf_file);
     app().setCustom404Page(page404);
     app().run();
+
     return 0;
 }
