@@ -27,12 +27,17 @@ int main(int argc, char *argv[])
         }
     }
 
-    HttpViewData data;
+    // Init error 404 page
+    HttpViewData data{};
     data.insert("page", Pages::NotFound);
-    auto page404 = HttpResponse::newHttpViewResponse("notfound404.csp", data);
+    auto page404 = HttpResponse::newHttpViewResponse(
+        "notfound404", data
+    );
+
+    // Init and start web server
     app().loadConfigFile(conf_file);
     app().setCustom404Page(page404);
     app().run();
 
-    return 0;
+    return EXIT_SUCCESS;
 }
