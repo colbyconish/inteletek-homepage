@@ -1,6 +1,8 @@
 #include <iostream>
 #include <unistd.h>
 
+#include <aws/core/Aws.h>
+
 #include <drogon/drogon.h>
 
 #include "Pages.hpp"
@@ -34,10 +36,15 @@ int main(int argc, char *argv[])
         "notfound404", data
     );
 
+    // Init aws functions
+    Aws::SDKOptions options;
+    Aws::InitAPI(options);
+
     // Init and start web server
     app().loadConfigFile(conf_file);
     app().setCustom404Page(page404);
     app().run();
 
+    Aws::ShutdownAPI(options);
     return EXIT_SUCCESS;
 }
