@@ -37,7 +37,8 @@ FetchContent_MakeAvailable(drogon c-ares_lib)
 
 find_package(Drogon CONFIG REQUIRED)
 find_package(AWSSDK REQUIRED COMPONENTS core sesv2)
-find_package(aws-lambda-runtime REQUIRED)
+
+set(CMAKE_ENABLE_EXPORTS TRUE)
 
 add_executable(
     homepage
@@ -53,36 +54,17 @@ drogon_create_views(
 
 target_include_directories(
     homepage
-    PRIVATE include
+    PUBLIC include
 )
 
 target_link_libraries(
     homepage
-    PRIVATE drogon
-    PRIVATE c-ares
-    PRIVATE aws-cpp-sdk-core
-    PRIVATE aws-cpp-sdk-sesv2
+    PUBLIC drogon
+    PUBLIC c-ares
+    PUBLIC aws-cpp-sdk-core
+    PUBLIC aws-cpp-sdk-sesv2
 )
 
-add_executable(
-    contact-lambda
-    src/lambda.cpp
-    src/MainController.cpp
-)
-
-target_include_directories(
-    contact-lambda
-    PRIVATE include
-)
-
-target_link_libraries(
-    contact-lambda
-    PRIVATE drogon
-    PRIVATE c-ares
-    PRIVATE aws-cpp-sdk-core
-    PRIVATE aws-cpp-sdk-sesv2
-    PUBLIC AWS::aws-lambda-runtime
-)
-
-# Command: make aws-lambda-package-contact-lambda
-aws_lambda_package_target(contact-lambda)
+if(DEFINED BUILD_LAMBDA)
+    add_subdirectory(lambda)
+endif()
