@@ -20,4 +20,4 @@ HEALTHCHECK CMD curl -f http://localhost:8080/health/ || exit 1
 
 EXPOSE 8080/tcp
 STOPSIGNAL SIGTERM
-ENTRYPOINT homepage
+CMD ["homepage"]
