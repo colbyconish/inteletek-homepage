@@ -344,6 +344,6 @@ form button.btn:hover {
     }
 
     .drop {
-        margin-top: None !important;
+        margin-top: 0.25em !important;
     }
 }
