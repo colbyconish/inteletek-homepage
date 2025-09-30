@@ -28,24 +28,16 @@ FetchContent_Declare(
     OVERRIDE_FIND_PACKAGE
 )
 
-# Configure AWS sdk
-FetchContent_Declare(
-    aws-sdk-cpp
-    GIT_REPOSITORY https://github.com/aws/aws-sdk-cpp.git
-    GIT_TAG 1.11.652 
-    OVERRIDE_FIND_PACKAGE
-)
-
-set(BUILD_SHARED_LIBS ON CACHE INTERNAL "Build shared libs")
-
-set(ENABLE_TESTING OFF CACHE INTERNAL "Don't waste my time")
-set(AUTORUN_UNIT_TESTING OFF CACHE INTERNAL "Please no")
-set(BUILD_ONLY "sesv2" CACHE INTERNAL "Build only the ses aws sdk")
+set(BUILD_SHARED_LIBS OFF CACHE INTERNAL "Don't build shared libs")
+set(CARES_SHARED OFF CACHE INTERNAL "Don't build shared libs")
+set(CARES_STATIC ON CACHE INTERNAL "Build static libs")
 
 # Fetch all dependencies
-FetchContent_MakeAvailable(drogon c-ares_lib aws-sdk-cpp)
+FetchContent_MakeAvailable(drogon c-ares_lib)
 
 find_package(Drogon CONFIG REQUIRED)
+find_package(AWSSDK REQUIRED COMPONENTS core sesv2)
+find_package(aws-lambda-runtime REQUIRED)
 
 add_executable(
     homepage
@@ -62,14 +54,6 @@ drogon_create_views(
 target_include_directories(
     homepage
     PRIVATE include
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/src/aws-cpp-sdk-core/include
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/include
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-common/include/
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-common/verification/cbmc/include/
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-io/include/
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-mqtt/include/
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-auth/include/
-    PRIVATE ${aws-sdk-cpp_SOURCE_DIR}/crt/aws-crt-cpp/crt/aws-c-sdkutils/include/
 )
 
 target_link_libraries(
@@ -79,3 +63,26 @@ target_link_libraries(
     PRIVATE aws-cpp-sdk-core
     PRIVATE aws-cpp-sdk-sesv2
 )
+
+add_executable(
+    contact-lambda
+    src/lambda.cpp
+    src/MainController.cpp
+)
+
+target_include_directories(
+    contact-lambda
+    PRIVATE include
+)
+
+target_link_libraries(
+    contact-lambda
+    PRIVATE drogon
+    PRIVATE c-ares
+    PRIVATE aws-cpp-sdk-core
+    PRIVATE aws-cpp-sdk-sesv2
+    PUBLIC AWS::aws-lambda-runtime
+)
+
+# Command: make aws-lambda-package-contact-lambda
+aws_lambda_package_target(contact-lambda)

@@ -7,8 +7,6 @@
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
-                <img class="main-image" src="/images/logo.png">
-
                 <!-- Mission -->
                 <div class="main-text-container container">
                     <h1 class="mokoto main-text title">Our Mission</span></h1>

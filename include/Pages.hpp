@@ -1,6 +1,8 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include <strings.h>
 
 enum class Pages 
 {
@@ -19,7 +21,7 @@ static std::array names
     "Services",
     "About",
     "Contact",
-    "404"
+    ""
 };
 
 inline const char *to_string(Pages page)
@@ -29,13 +31,11 @@ inline const char *to_string(Pages page)
 
 inline Pages from_string(const char *name)
 {
-
-    uint32_t i = 0;
-    for(auto &str : names)
+    for(int i = (int)Pages::Home;i < names.size();++i)
     {
-        if(strcasecmp(str, name) == 0) return (Pages) i;
-        i++;
+        if(strcasecmp(names[i], name) == 0) 
+            return (Pages) i;
     }
 
-    return (Pages) 0;
+    return Pages::None;
 }

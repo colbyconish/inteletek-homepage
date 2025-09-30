@@ -3,7 +3,7 @@
     Pages page = @@.get<Pages>("page");
 %>
 
-<header class="bg-body sticky-top py-4">
+<header class="bg-body-tertiary sticky-top">
     <div class="container d-flex flex-wrap justify-content-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
           <symbol id="check2" viewBox="0 0 16 16">
@@ -48,36 +48,11 @@
                     <li class="py-lg-1 col-12 col-lg-auto">
                         <hr class="w-100"/>
                     </li>
-                    <li class="nav-item mt-auto">
-                        <div id="bd-theme" class="d-flex justify-content-end dropdown bd-mode-toggle">
-                          <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-                            <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text" style="">
-                            <li>
-                              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-                                Light
-                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-                                Dark
-                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-                                <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                                Auto
-                                <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
+                    <li class="mx-3 nav-item">
+                        <button type="button" class="px-1 dropdown-item d-flex align-items-center" onClick="setTheme(true)" aria-pressed="false">
+                            <svg id="svg-light" class="hidden bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                            <svg id="svg-dark" class="hidden bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                        </button>
                     </li>
                   </ul>
               </div>

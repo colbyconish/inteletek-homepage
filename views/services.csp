@@ -7,7 +7,7 @@
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
                 <!-- Web Development -->
-                <div class="main-text-container container">
+                <div class="main-text-container container drop">
                     <h1 class="mokoto main-text title">Web Development</span></h1>
                     <h2 class="main-text">
                         We excel in web development and can build you any size web application in your prefered framework.    
@@ -66,7 +66,7 @@
                 <!-- Miscellaneous -->
                 <div class="mt-4 main-text-container container">
                     <h2 class="main-text">
-                        See something you like?<br>Not quite what your looking for?
+                        See something you like?<br>Not quite what you're looking for?
                     </h2>
                     <h3 class="main-text">
                         Send us a <a href="/contact" class="highlight">message</a> and let us know what you need!

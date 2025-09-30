@@ -7,7 +7,6 @@
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
                 <div id="contact-main" class="w-100"> 
                     <div class="main-text-container container">
-                        <img class="main-image" src="/images/logo.png">
                         <h1 class="mokoto main-text title">Contact Us</h1>
                         <h3 class="main-text">
                             Please tell us about any inquiries or ideas you might have. 
@@ -39,9 +38,12 @@
 
                         <hr style="margin-left: 30%; margin-right:30%; width: 40%;"/>
                         <h1 class="text-center fs-1 mokoto">Let's get in touch</h1>
+
+                        <%view popup_container%>
                     </div>
                 </div>
 
+                <!-- Thank you hidden message -->
                 <div id="contact-thanks" class="hidden w-100">
                     <div class="main-text-container container">
                         <img class="main-image" src="/images/logo.png">

@@ -2,25 +2,32 @@
 #include <unistd.h>
 
 #include <aws/core/Aws.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 
 #include <drogon/drogon.h>
 
 #include "Pages.hpp"
 
 using namespace drogon;
+using namespace Aws::Auth;
+using namespace Aws::Utils::Logging;
 
 char DEFAULT_CONF_LOC[] = "/etc/webserver.json";
 int main(int argc, char *argv[]) 
 {
+    char *root = nullptr;
     char *conf_file = DEFAULT_CONF_LOC; 
 
     int c;
-    while((c = getopt(argc, argv, "c:")) != -1)
+    while((c = getopt(argc, argv, "c:r:")) != -1)
     {
         switch(c)
         {
         case 'c':
             conf_file = optarg;
+            break;
+        case 'r':
+            root = optarg;
             break;
         case '?':
         case '*':
@@ -32,16 +39,18 @@ int main(int argc, char *argv[])
     // Init error 404 page
     HttpViewData data{};
     data.insert("page", Pages::NotFound);
-    auto page404 = HttpResponse::newHttpViewResponse(
-        "notfound404", data
-    );
+    auto page404 = HttpResponse::newHttpViewResponse("notfound404", data);
 
     // Init aws functions
-    Aws::SDKOptions options;
+    Aws::SDKOptions options{};
+    options.loggingOptions.logLevel = LogLevel::Warn;
     Aws::InitAPI(options);
 
     // Init and start web server
     app().loadConfigFile(conf_file);
+    if(root != nullptr)
+        app().setDocumentRoot(root);
+
     app().setCustom404Page(page404);
     app().run();
 

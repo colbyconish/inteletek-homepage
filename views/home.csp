@@ -6,12 +6,11 @@
             <%view mainheader%>
             <div class="mw-100 d-flex flex-both align-items-center justify-content-center flex-column">
 
-                <!-- Logo and missions -->
+                <!-- Mission statements -->
                 <div class="main-text-container container">
-                    <img class="main-image" src="/images/logo.png">
-                    <h1 class="mokoto main-text title">Intelligent <span class="highlight">Technology</span></h1>
+                    <h1 class="mokoto main-text title drop">Intelligent <span class="highlight">Technology</span></h1>
                     <h2 class="main-text">
-                        We at <span class="highlight">inteletek</span>, strive to create quality software that is highly efficient and highly available <strong><i>without</i></strong> compromising on security.
+                        We at <span class="highlight">Inteletek</span>, strive to create quality software that is highly efficient and highly available <strong><i>without</i></strong> compromising on security.
                     </h2>
                     <h3 class="main-text">
                         Our mission is to bring quality software to the masses. 

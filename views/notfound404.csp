@@ -4,11 +4,10 @@
         <%view head%>
         <main class="d-flex flex-grow-even flex-column">
             <%view mainheader%>
-            <div class="d-flex flex-grow-even justify-content-center">
-                <div class="d-flex justify-content-center flex-column">
-                    <h1 class="text-center title">404 Not Found</h1>
-                    <p class="bg-transparent text-center code">program exited with code: 404</p>
-                </div>
+            <div class="d-flex flex-column flex-both justify-content-center align-items-center">
+                <img class="main-image" src="/images/logo.png">
+                <h1 class="mokoto main-text title">404 Not Found</h1>
+                <p class="bg-transparent text-center code">program exited with code: 404</p>
             </div>
             <%view mainfooter%>
         </main>
